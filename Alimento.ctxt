@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=proteinas\ grasas\ carbohidratos\ nombre
+comment0.target=Alimento(float,\ float,\ float,\ java.lang.String)
+comment0.text=\r\n\ Contructor\ donde\ daremos\ el\ valor\ inicial\ del\ objeto\ alimento\r\n
+comment1.params=
+comment1.target=void\ muestraDatos()
+comment1.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n
+numComments=2
