@@ -22,6 +22,26 @@ public class Alimento
         this.nombre = nombre;
         calorias = (proteinas * 4) + (grasas * 9) + (carbohidratos * 4);
     }
+    
+    public float getProteinas()
+    {
+        return proteinas;
+    }
+    
+    public float getGrasas()
+    {
+        return grasas;
+    }
+    
+    public float getCarbohidratos()
+    {
+        return carbohidratos;
+    }
+    
+    public float getCalorias()
+    {
+        return calorias;
+    }
 
     /**
      * An example of a method - replace this comment with your own

@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=nombre
+comment0.target=Usuario(java.lang.String)
+comment0.text=\r\n\ Constructor\ donde\ inicializamos\ atributos\r\n
+comment1.params=consu\ cantidad
+comment1.target=void\ comer(Alimento,\ float)
+comment2.params=
+comment2.target=void\ noTerminado()
+comment2.text=\r\n\ No\ definitivo\!\!\!\!\!\r\n
+numComments=3
