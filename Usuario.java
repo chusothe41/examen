@@ -24,7 +24,11 @@ public class Usuario
         carbohidratosIngeridos = 0;
         caloriasIngeridas = 0;
     }
-
+    
+    /**
+     * En este metodo tomamos valores de la clase alimento los dividimos segun la cantidad del mismo que tomamos
+     * Todos estos valores se guardan en atributos
+     */
     public void comer (Alimento consu, float cantidad)
     {
         proteinasIngeridas = proteinasIngeridas + ((consu.getProteinas()*cantidad)/100);
@@ -36,13 +40,53 @@ public class Usuario
     /**
      * No definitivo!!!!!
      */
-    public void noTerminado()
+    public void imprimir()
     {
-        //
-        System.out.println("Nombre:" + nombre + "");   
-        System.out.println("Gramos de proteinas ingeridos: " + proteinasIngeridas + "");
-        System.out.println("Gramos de carbohidratos ingeridos: " + carbohidratosIngeridos + "");
-        System.out.println("Gramos de grasas ingeridos: " + grasasIngeridas + "");
-        System.out.println("Calorias ingeridas: " + caloriasIngeridas + "");
+        float sumatorio;
+        sumatorio = proteinasIngeridas+grasasIngeridas+carbohidratosIngeridos; 
+        System.out.println("Nombre:" + nombre + "");
+        if (proteinasIngeridas == 0 && grasasIngeridas == 0 && carbohidratosIngeridos == 0)
+        {
+            System.out.println("Gramos de proteinas ingeridos: " + proteinasIngeridas + "" );
+            System.out.println("Gramos de carbohidratos ingeridos: " + carbohidratosIngeridos + "" );
+            System.out.println("Gramos de grasas ingeridas: " + grasasIngeridas + "" );
+        }
+        else if (proteinasIngeridas == 0 || grasasIngeridas == 0 || carbohidratosIngeridos == 0)
+        {
+            if (proteinasIngeridas == 0)
+            {
+                if (grasasIngeridas == 0 && carbohidratosIngeridos != 0)
+                {
+                    System.out.println("Gramos de proteinas ingeridos: " + proteinasIngeridas + "");
+                    System.out.println("Gramos de carbohidratos ingeridos: " + carbohidratosIngeridos + " (" + (carbohidratosIngeridos * 100) / sumatorio + "%)" );
+                    System.out.println("Gramos de grasas ingeridas: " + grasasIngeridas + "" );
+                }
+            }
+            else if(grasasIngeridas == 0)
+            {
+                if (proteinasIngeridas == 0 && carbohidratosIngeridos != 0)
+                {
+                    System.out.println("Gramos de proteinas ingeridos: " + proteinasIngeridas + "" );
+                    System.out.println("Gramos de carbohidratos ingeridos: " + carbohidratosIngeridos + " (" + (carbohidratosIngeridos * 100) / sumatorio + "%)" );
+                    System.out.println("Gramos de grasas ingeridas: " + grasasIngeridas + "" );
+                }
+            }
+            else if(carbohidratosIngeridos == 0)
+            {
+                if (proteinasIngeridas == 0 && carbohidratosIngeridos != 0)
+                {
+                    System.out.println("Gramos de proteinas ingeridos: " + proteinasIngeridas + "" );
+                    System.out.println("Gramos de carbohidratos ingeridos: " + carbohidratosIngeridos + "" );
+                    System.out.println("Gramos de grasas ingeridas: " + grasasIngeridas + " (" + (grasasIngeridas * 100) / sumatorio + "%)" );
+                }
+            }            
+        }
+        else if (proteinasIngeridas != 0 || grasasIngeridas != 0 || carbohidratosIngeridos != 0)
+        {
+            System.out.println("Gramos de proteinas ingeridos: " + proteinasIngeridas + " (" + (proteinasIngeridas * 100) / sumatorio + "%)" );
+            System.out.println("Gramos de carbohidratos ingeridos: " + carbohidratosIngeridos + " (" + (carbohidratosIngeridos * 100) / sumatorio + "%)" );
+            System.out.println("Gramos de grasas ingeridas: " + grasasIngeridas + " (" + (grasasIngeridas * 100) / sumatorio + "%)" );
+        }
+        System.out.println("Calorias ingeridas: " + caloriasIngeridas + "" );
     }
 }
