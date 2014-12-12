@@ -89,4 +89,42 @@ public class Usuario
         }
         System.out.println("Calorias ingeridas: " + caloriasIngeridas + "" );
     }
+    
+    /**
+     * Metodo getter que devueve la cantidad de calorias
+     */
+    public float getCalorias()
+    {
+        return caloriasIngeridas;
+    }
+    
+    /**
+     * Metodo getter que devueve el nombre del usuario
+     */
+    public String getNombre()
+    {
+        return "" + nombre + "";
+    }
+    
+    /**
+     * Metodo de comparacion introduces un valor y lo compara con el de otro objeto usuario
+     */
+    public void comparacion(Usuario comparado)
+    {
+        if (caloriasIngeridas == comparado.getCalorias())
+        {
+            System.out.println("Han consumido la misma cantidad");
+        }
+        else
+        {
+            if(caloriasIngeridas > comparado.getCalorias())
+            {
+                System.out.println("Has consumido mas calorias que " + comparado.getNombre() + "");
+            }
+            else
+            {
+                System.out.println("Has consumido menos calorias que " + comparado.getNombre() + "");
+            }
+        }
+    }
 }
