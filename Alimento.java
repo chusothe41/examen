@@ -42,9 +42,14 @@ public class Alimento
     {
         return calorias;
     }
+    
+    public String getNombre()
+    {
+        return "" + nombre + "";
+    }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Muestra la informacion nutricional
      */
     public void muestraDatos ()
     {

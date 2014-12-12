@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 public class Usuario
 {
     // Aqui se gaurda el nombre del usuario
@@ -10,6 +11,10 @@ public class Usuario
     private float carbohidratosIngeridos;
     //En esta variable se guarda la cantidad de calorias que ha comido el usuario
     private float caloriasIngeridas;
+    //Aqui se guarda el nombre del objeto alimento consumido mas calorico hasta el momento
+    private String masCalorico;
+    //Aqui se guada la cantidad de calorias del objeto alimento que mas tiene por cada 100
+    private float maximas;
 
     /**
      * Constructor donde inicializamos atributos
@@ -23,6 +28,7 @@ public class Usuario
         grasasIngeridas = 0;
         carbohidratosIngeridos = 0;
         caloriasIngeridas = 0;
+        masCalorico = "Ninguno";
     }
     
     /**
@@ -31,6 +37,11 @@ public class Usuario
      */
     public void comer (Alimento consu, float cantidad)
     {
+        if (consu.getCalorias() > maximas)
+        {
+            maximas = consu.getCalorias();
+            masCalorico = consu.getNombre();
+        }
         proteinasIngeridas = proteinasIngeridas + ((consu.getProteinas()*cantidad)/100);
         grasasIngeridas = grasasIngeridas + ((consu.getGrasas()*cantidad)/100);
         carbohidratosIngeridos = carbohidratosIngeridos + ((consu.getCarbohidratos()*cantidad)/100);
@@ -126,5 +137,13 @@ public class Usuario
                 System.out.println("Has consumido menos calorias que " + comparado.getNombre() + "");
             }
         }
+    }
+    
+    /**
+     * Imprime por pantalla el alimento mas calorico
+     */
+    public void masCaloricoHastaElMomento()
+    {
+        System.out.println("Alimento más calórico ingerido por el usuario hasta el momento: " + masCalorico +"");
     }
 }
