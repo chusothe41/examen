@@ -58,7 +58,7 @@ public class Alimento
         System.out.println("Carbohidratos por cada 100 gramos: " + carbohidratos + "");
         System.out.println("Grasas por cada 100 gramos: " + grasas + "");
         System.out.println("Calorias: " + calorias + "");
-        if (proteinas >= grasas)
+        if (proteinas > grasas)
         {
             if (grasas > carbohidratos)
             {
@@ -69,7 +69,18 @@ public class Alimento
                 System.out.println("Componente/s mayoritario/s: Proteinas y carbohidratos");
             }
         }
-        else if (grasas >= proteinas)
+        else if (proteinas > carbohidratos)
+        {
+            if (grasas > carbohidratos)
+            {
+                System.out.println("Componente/s mayoritario/s: Proteinas y grasas");
+            }
+            else
+            {
+                System.out.println("Componente/s mayoritario/s: Proteinas y carbohidratos");
+            }
+        }
+        else if (grasas > proteinas)
         {
             if (proteinas > carbohidratos)
             {
@@ -78,6 +89,39 @@ public class Alimento
             else
             {
                 System.out.println("Componente/s mayoritario/s: Grasas y carbohidratos");
+            }
+        }
+        else if (proteinas == grasas)
+        {
+            if (proteinas < carbohidratos)
+            {
+                System.out.println("Componente/s mayoritario/s: Carbohidratos");
+            }
+            else
+            {
+                System.out.println("Componente/s mayoritario/s: Proteinas y grasas");
+            }
+        }
+        else if (carbohidratos == proteinas)
+        {
+            if (carbohidratos < grasas)
+            {
+                System.out.println("Componente/s mayoritario/s: Grasas");
+            }
+            else
+            {
+                System.out.println("Componente/s mayoritario/s: Carbohidratos y proteinas");
+            }
+        }
+        else if (grasas == carbohidratos)
+        {
+            if (proteinas > grasas)
+            {
+                System.out.println("Componente/s mayoritario/s: Proteinas");
+            }
+            else
+            {
+                System.out.println("Componente/s mayoritario/s: Carbohidratos y grasas");
             }
         }
         else if (grasas == proteinas && carbohidratos == proteinas)
